@@ -17,26 +17,25 @@ int main()
             cout << ", ";
         }
     }
-    cout << "\nChoose which Pokemon to replace: ";
-    cin >> idx_inp;
+    while (true){
+        cout << "\nChoose which Pokemon to replace: ";
+        cin >> idx_inp;
+        if (idx_inp >= 0 && idx_inp < array_size){
+            break;
+        }
+        cout << "Index Invalid!!";
+    }
     cout << "Replacement Pokemon: ";
     cin >> usr_inp;
     cout << "\nPokemon to replace " << pokemon[idx_inp] << " is " << usr_inp << endl;
     pokemon[idx_inp] = usr_inp;
 
-
-
-
-     for(int i = 0; i< array_size; i++){
+    cout << "List with Replaced Pokemon: ";
+    for(int i = 0; i< array_size; i++){
         cout << pokemon[i];
         if (i < array_size - 1){
             cout << ", ";
         }
     }
-
-
-
-
     return 0;
-
 }
